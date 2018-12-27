@@ -9,6 +9,6 @@ steps:
     env:
       - 'IMAGE=${_REGISTRY}:${TAG_NAME}'
 options:
-  machineType: 'N1_HIGHCPU_2'
+  machineType: 'N1_HIGHCPU_8'
 timeout: 660s
 tags: ['mytag1', 'mytag2']
