@@ -21,7 +21,7 @@ steps:
     args: [
       '-X', 'POST',
       '-H', 'Content-type: application/json',
-      '--data', ''\''{"channel":"@peter","text":"The image was pushed: ${_REGISTRY}:${TAG_NAME}"}'\''',
+      '--data', '"{\"channel\":\"@peter\",\"text\":\"The image was pushed: ${_REGISTRY}:${TAG_NAME}\"}"',
       '${_SLACK_HOOK}'
     ]
 #options:
