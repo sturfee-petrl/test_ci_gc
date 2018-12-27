@@ -17,7 +17,7 @@ steps:
       '-e', 'AWS_SECRET_ACCESS_KEY=${_AWS_SECRET_ACCESS_KEY}',
       'im7mortal/aws:v1'
     ]
-  - name: 'gcr.io/cloud-builders/curl'
+  - name: 'im7mortal/echo'
     args: [
       '-X', 'POST',
       '-H', '"Content-type: application/json"',
