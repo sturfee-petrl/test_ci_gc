@@ -3,7 +3,7 @@ steps:
     args: ['build', '-t', '${IMAGE}', '-f', 'configs/Dockerfile', '.']
     timeout: 500s
     env:
-    - 'IMAGE=lol'
+    - 'IMAGE="lol"'
 #  - name: 'gcr.io/cloud-builders/docker'
 #    args: ['run', '-v', '/var/run/docker.sock:/var/run/docker.sock', '-e', 'IMAGE=${IMAGE}', '-e', 'AWS_DEFAULT_REGION=${_AWS_DEFAULT_REGION}', '-e', 'AWS_ACCESS_KEY_ID=${_AWS_ACCESS_KEY_ID}', '-e', 'AWS_SECRET_ACCESS_KEY=${_AWS_SECRET_ACCESS_KEY}', 'im7mortal/aws:v1']
 #    env:
