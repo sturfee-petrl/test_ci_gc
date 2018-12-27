@@ -4,7 +4,7 @@ steps:
     timeout: 500s
   - name: 'gcr.io/cloud-builders/docker'
     args: ['run', '-v', '/var/run/docker.sock:/var/run/docker.sock', '-e', 'IMAGE=${_REGISTRY}:${TAG_NAME}', '-e', 'AWS_DEFAULT_REGION=${_AWS_DEFAULT_REGION}', '-e', 'AWS_ACCESS_KEY_ID=${_AWS_ACCESS_KEY_ID}', '-e', 'AWS_SECRET_ACCESS_KEY=${_AWS_SECRET_ACCESS_KEY}', 'im7mortal/aws:v1']
-  - name: 'gcr.io/$PROJECT_ID/ubuntu-curl'
+  - name: 'gcr.io/cloud-builders/curl'
     args: ['-X',
            'POST',
            '-H',
