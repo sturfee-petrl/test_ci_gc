@@ -1,12 +1,9 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', '${_IMAGE}', '-f', 'configs/Dockerfile', '.']
+    args: ['build', '-t', '${_REGISTRY}:${TAG_NAME}', '-f', 'configs/Dockerfile', '.']
     timeout: 500s
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['run', '-v', '/var/run/docker.sock:/var/run/docker.sock', '-e', 'IMAGE=${_IMAGE}', '-e', 'AWS_DEFAULT_REGION=${_AWS_DEFAULT_REGION}', '-e', 'AWS_ACCESS_KEY_ID=${_AWS_ACCESS_KEY_ID}', '-e', 'AWS_SECRET_ACCESS_KEY=${_AWS_SECRET_ACCESS_KEY}', 'im7mortal/aws:v1']
-substitutions:
-  _IMAGE: "${_REGISTRY}:${TAG_NAME}"
-
+    args: ['run', '-v', '/var/run/docker.sock:/var/run/docker.sock', '-e', 'IMAGE=${_REGISTRY}:${TAG_NAME}', '-e', 'AWS_DEFAULT_REGION=${_AWS_DEFAULT_REGION}', '-e', 'AWS_ACCESS_KEY_ID=${_AWS_ACCESS_KEY_ID}', '-e', 'AWS_SECRET_ACCESS_KEY=${_AWS_SECRET_ACCESS_KEY}', 'im7mortal/aws:v1']
 #options:
 #  machineType: 'N1_HIGHCPU_8'
 #timeout: 660s
