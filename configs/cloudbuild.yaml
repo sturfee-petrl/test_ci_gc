@@ -1,6 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', '${IMAGE}', '-f', 'configs/Dockerfile', '.']
+    args: ['build', '-t', '${_REGISTRY}', '-f', 'configs/Dockerfile', '.']
     timeout: 500s
     env:
     - 'IMAGE="lol"'
