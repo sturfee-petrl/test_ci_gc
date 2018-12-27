@@ -20,7 +20,7 @@ steps:
   - name: 'gcr.io/cloud-builders/curl'
     args: [
       '-X', 'POST',
-      '-H', 'Content-type: application/json',
+      '-H', '"Content-type: application/json"',
       '--data', '"{\"channel\":\"@peter\",\"text\":\"The image was pushed: ${_REGISTRY}:${TAG_NAME}\"}"',
       '${_SLACK_HOOK}'
     ]
